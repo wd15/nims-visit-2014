@@ -7,113 +7,72 @@
    
 # {#title .step data-y=-2500 data-scale=4}
 
-<p class="title">Simulation and Metadata Management</p>
+<p class="title">Simulation Management Tools</p>
 
 <p class="footer">
     Daniel Wheeler &bull;
-    April 29, 2014 &bull;
-    Diffusion Workshop
+    December 12, 2014
 </p>
 
 
-# {#automate .step data-y=200 data-x=-800}
+# {#automate .step data-y=200 data-x=-2400}
 
-# {#automate .step data-y=200 data-x=-800}
+# {#automate .step data-y=200 data-x=-2400}
 
 <br>
 <p class="title"> Automate </p>
 
-# About me {#aboutme .step data-y=200 data-x=800}
+# About me {#aboutme .step data-y=200 data-x=-800}
 
 <br>
 scientific/academic code developer
 <br>
 <br>
-run/manage simulations (code monkey)
+develop scientific Python tools
 <br>
 <br>
-an epic Pythonista (according to OSRC)
-<br>
-<br>
-FiPy developer
+run/manage simulations
 <br>
 <br>
 interested in reproducible research, see <code class="twitter">@wd15dan</code>
 
-# Imagine... {.step .alwaysshow data-y=200 data-x=2400}
+# Interested in... {.step data-y=200 data-x=800}
 
+<p class="small" style="font-size: 30px;">
 <br>
-A declarative metadata standard<p class="small"> that you can use to
-tell a Linux VM how to download your data, execute your computational
-analysis, and spin up an interface to a literate computing environment
-with the analysis preloaded. Then we can provide buttons on scientific
-papers that say "run this analysis on Rackspace! or Amazon! Estimated
-cost: $25".</p>
-<br>
-Automated integration tests for papers <p class="small">
-where you provide the metadata to run your analysis while you're
-working on your paper and a service automatically pulls down your
-analysis source and data, runs it, and generates your figures for you
-to check. Then when the paper is ready to submit, the journal takes
-your metadata format and verifies it themselves, and passes it on to
-reviewers with a little "reproducible!" tick mark.
+logging simulations <br><br>
+replicating simulations <br><br>
+building upon existing simulations <br><br>
+meta-data standards for simulations <br><br>
+curating simulations <br><br>
+integration tests for simulations<br><br>
 </p>
-<br>
-ideas by *C. Titus Brown*
+<b>Automate with open source tools!</b>
 
-# Orthogonal Issues {#orthogonal .step .alwaysshow data-y=2500}
-
-<div class="up-triangle"></div>
-
-# Workflow Control {.step .alwaysshow data-y=2720 data-x=180}
-
-# Scientific Development Process {.step data-y=2000 data-x=500 data-scale=0.2}
+# Scientific Development Process {.step data-y=200 data-x=2400}
 
 <br>
 <img class="center" src="images/workflow.png"></img>
 
-<!-- # {#versioncontrol .step .alwaysshow data-y=2910 data-x=-680 data-rotate-z="45"} -->
+# Core Issues {#orthogonal .step data-y=1500 data-x=-2400}
 
-# {.step .alwaysshow data-y=2500}
+<br> workflow control
+<br><br> version control
+<br><br> <p style="color: red;"> event control </p>
 
-# Version Control {.step .alwaysshow data-y=3110 data-x=-280 data-rotate-z="45"}
-
-# {#vc .step data-y=3110 data-x=-280 data-rotate-z="45"}
+# Version Control {.step data-y=1500 data-x=-800}
 
 <img class="vc" src="images/stack-of-files.png"></img>
 <br>
-maintains history of workflow changes 
+maintains history of code changes 
 <br>
 <br>
-but not workflow usage
+but not code usage
 <br>
 <br>
-already integrated into the scientific development process
+integrated into scientific code development
 
-# Easy to use {.step data-y=3200 data-x=-500 data-rotate-z="45" data-scale=0.2}
-
-
-~~~~{.console}
-$ git init
-$ git add file.txt
-$ git commit -m "add file.txt"
-$ edit file.txt
-$ git commit -am "edit file.txt"
-$ git log
-12e3c2618143 add file.txt
-e00433e69a43 edit file.txt
-$ git push github master
-~~~~
-
-# Manage Complexity {#managecomplexity .step data-y=3350 data-x=-350 data-rotate-z="-45" data-scale=0.2}
-
-![](images/network.png)
-
-# {.step .alwaysshow data-y=2500}  
-
-# Event Control {.step .alwaysshow data-rotate-z="-45" data-y=2700 data-x=560 }
-
-# {.step data-rotate-z="-45" data-y=2700 data-x=560 }
+# Event Control {.step data-y=1500 data-x=800 }
 
 <br>
 provide a **unique ID (SHA checksum)** for every workflow execution
@@ -125,11 +84,9 @@ capture **metadata**, not data
 **not** workflow control or version control
 <br>
 <br>
-partial solution: **Sumatra**, a simulation management tool (not workflow)
+partial solution: **Sumatra**, a simulation management tool
 
-# {.step .alwaysshow data-y=2500}  
-
-# Sumatra {.step data-x=-1000 data-y=1200 data-scale=0.5}
+# Client-Side Solution: Sumatra {.step data-x=2400 data-y=1500}
 
 <br>
 **doesn't change my workflow**
@@ -141,7 +98,9 @@ location, time stamps, commit message, duration, data hash
 <br>
 generates **unique ID** for each simulation
 
-# Easy to use {#easytouse1 .step data-x=-200 data-y=1200 data-scale=0.5}
+# Demonstration {#easytouse1 .step data-x=-2400 data-y=2800}
+
+<br>
 
 ~~~~{.console}
 $ smt init smt-demo
@@ -153,92 +112,24 @@ No data produced.
 Created Django record store using SQLite
 ~~~~
 
-# Easy to use {#easytouse2 .step data-x=-200 data-y=1200 data-scale=0.5}
-
-~~~~{.console}
-$ smt list --long
-------------------------------------------------------------------------
-Label            : 6c9c7cd2bbc2
-Timestamp        : 2014-04-21 16:07:52.100838
-Reason           : create demo record
-Outcome          : 
-Duration         : 3.26091217995
-Repository       : GitRepository at /home/wd15/git/diffusion-worksho ...
-Main_File        : script.py
-Version          : 08d04df6a9b561eb146d3a7461f763869fdc48a7
-Script_Arguments : <parameters>
-Executable       : Python (version: 2.7.6) at /home/wd15/anaconda/bi ...
-Parameters       : {
-                 :     "wait": 3
-                 : }
-Input_Data       : []
-Launch_Mode      : serial
-Output_Data      : []
-User             : Daniel Wheeler <daniel.wheeler2@gmail.com>
-Tags             : demo
-Repeats          : None
-~~~~
-
-# Web Interface {#webinterface .step data-x=800 data-y=1200 data-scale=0.5}
+# Local Web Interface {#webinterface .step data-x=-800 data-y=2800}
 
 <iframe width="100%" height="100%" src="http://127.0.0.1:8000/" frameborder="0" border="0"> </iframe>
 
-# Sumatra + IPython + Pandas { .step data-x=1800 data-y=1200 data-scale=0.5}
+# Server-Side Solution {.step data-x=800 data-y=2800}
+
+<iframe width="70%" height="20%" style="position: relative; top: 50px; left: 100px;" src="http://127.0.0.1:5000/" frameborder="0" border="0"> </iframe>
+
+<img class="center" style="max-width: 70%; left: -30px; top: 150px;" src="images/diag.png"></img>
+
+<!-- <img class="center" style="max-width: 40%; left: 200px; top: 400px;" src="images/appengine.png"></img> -->
+<!-- <img class="center" style="max-width: 80%; left: -300px; top: -190px;" src="images/sumatra.png"></img> -->
+<!-- <img class="center" style="max-width: 40%; left: -200px; top: 100px;" src="images/sql-alchemy-logo1.jpg"></img> -->
+
+# Thanks! {.step data-x=2400 data-y=2800}
 
 <br>
-high level data manipulation
+slides: [wd15.github.io/nims-visit-2014](http://wd15.github.io/nims-visit-2014/)
 <br>
 <br>
-quickly mix parameters, metadata and output data in a dataframe
-<br>
-<br>
-save Sumatra records as HDF file
-<br>
-<br>
-disseminate instantly using [nbviewer.ipython.org](http://nbviewer.ipython.org/)
-
-# Using Pandas {#usingpandas .step data-x=2800 data-y=1200 data-scale=0.5}
-
-~~~~{.console}
-$ smt export
-$ ipython
-~~~~
-~~~~{.python}
->>> import json, pandas
->>> with open('.smt/records_export.json') as f:
-...     data = json.load(f)     
->>> df = pandas.DataFrame(data)
->>> custom_df = df[['label', 'duration', 'tags']]
->>> custom_df
-   label         duration  tags
-0  6c9c7cd2bbc2  3.260912  [demo]
-1  db8610f0c51f  3.248754  [demo]
-2  0fdaf12e0cb2  3.247553  [demo]
-...
->>> custom_df.to_hdf('records.h5')
-~~~~
-
-# Using IPython {#webinterface2 .step data-x=3800 data-y=1200 data-scale=0.5}
-
-<iframe width="100%" height="100%" src="http://wd15.github.io/2013/05/07/extremefill2d/" frameborder="0" border="0"> </iframe>
-
-# {.step data-y=200 data-x=2400}
-
-# The Fantasy {.step data-x=3400 data-y=200 data-scale=0.5}
-
-<br>
-cloud service for Sumatra
-<br>
-<br>
-integrated with Github, Buildbot and a VM provider
-<br>
-<br>
-**sumatra-server 0.1.0** is out!  
-
-# Thanks! {.step data-x=4400 data-y=200 data-scale=0.5}
-
-<br>
-slides: [wd15.github.io/diffusion-workshop-2014](http://wd15.github.io/diffusion-workshop-2014/)
-<br>
-<br>
-parallel demo: [github.com/wd15/smt-demo](https://github.com/wd15/smt-demo)
+sumatra demo: [github.com/wd15/smt-demo](https://github.com/wd15/smt-demo)
