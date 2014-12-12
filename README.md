@@ -1,6 +1,6 @@
 # Simulation and Data Management
 
-Slides for a talk at the NIST Diffusion Workshop 2014.
+Slides for a talk for NIMS, Japan visit to NIST.
 
 ## Authors
 
@@ -31,7 +31,7 @@ may help.
 
 To build:
  
-    $ git clone https://github.com/wd15/diffusion-workshop-2014.git
+    $ git clone https://github.com/wd15/nims-visit-2014
     $ cd diffusion-workshop-2014
     $ make slides.html
 
@@ -40,9 +40,5 @@ To build:
 One of the slides will not be shown as it is a link to the local host
 running a Sumatra server.
 
-## Viewing Slides
-
-The slides can be viewed at
-[wd15.github.io/diffusion-workshop-2014](http://wd15.github.io/diffusion-workshop-2014)
 
 
