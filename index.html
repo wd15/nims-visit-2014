@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Simulation Management</title>
+    <link href="css/impress-style.css" rel="stylesheet" />
+    <link href="css/sourcecode.css" rel="stylesheet" />
+</head>
+<body class="impress-not-supported">
+
+<div class="fallback-message">
+   impress.js is not supported by your browser, sorry.
+</div>
+
+<div id="impress">
+<section id="overview" class="level1 step" data-scale="8">
+<h1><a href="#overview"></a></h1>
+</section>
+<section id="title" class="level1 step" data-y="-2500" data-scale="4">
+<h1><a href="#title"></a></h1>
+<p class="title">
+Simulation Management Tools
+</p>
+
+<p class="footer">
+    
+Daniel Wheeler • December 12, 2014
+</p>
+
+
+</section>
+<section id="automate" class="level1 step" data-y="200" data-x="-2400">
+<h1><a href="#automate"></a></h1>
+</section>
+<section id="automate" class="level1 step" data-y="200" data-x="-2400">
+<h1><a href="#automate"></a></h1>
+<br>
+<p class="title"> 
+Automate
+</p>
+
+</section>
+<section id="aboutme" class="level1 step" data-y="200" data-x="-800">
+<h1><a href="#aboutme">About me</a></h1>
+<p><br> scientific/academic code developer <br> <br> develop scientific Python tools <br> <br> run/manage simulations <br> <br> interested in reproducible research, see <code class="twitter"><span class="citation" data-cites="wd15dan">@wd15dan</span></code></p>
+</section>
+<section id="interested-in..." class="level1 step" data-y="200" data-x="800">
+<h1><a href="#interested-in...">Interested in...</a></h1>
+<p class="small" style="font-size: 30px;">
+<br> logging simulations <br><br> replicating simulations <br><br> building upon existing simulations <br><br> meta-data standards for simulations <br><br> curating simulations <br><br> integration tests for simulations<br><br>
+</p>
+<p><b>Automate with open source tools!</b></p>
+</section>
+<section id="scientific-development-process" class="level1 step" data-y="200" data-x="2400">
+<h1><a href="#scientific-development-process">Scientific Development Process</a></h1>
+<p><br> <img class="center" src="images/workflow.png"></img></p>
+</section>
+<section id="orthogonal" class="level1 step" data-y="1500" data-x="-2400">
+<h1><a href="#orthogonal">Core Issues</a></h1>
+<br> workflow control <br><br> version control <br><br>
+<p style="color: red;"> 
+event control
+</p>
+
+</section>
+<section id="version-control" class="level1 step" data-y="1500" data-x="-800">
+<h1><a href="#version-control">Version Control</a></h1>
+<p><img class="vc" src="images/stack-of-files.png"></img> <br> maintains history of code changes <br> <br> but not code usage <br> <br> integrated into scientific code development</p>
+</section>
+<section id="event-control" class="level1 step" data-y="1500" data-x="800">
+<h1><a href="#event-control">Event Control</a></h1>
+<p><br> provide a <strong>unique ID (SHA checksum)</strong> for every workflow execution <br> <br> capture <strong>metadata</strong>, not data <br> <br> <strong>not</strong> workflow control or version control <br> <br> partial solution: <strong>Sumatra</strong>, a simulation management tool</p>
+</section>
+<section id="client-side-solution-sumatra" class="level1 step" data-x="2400" data-y="1500">
+<h1><a href="#client-side-solution-sumatra">Client-Side Solution: Sumatra</a></h1>
+<p><br> <strong>doesn't change my workflow</strong> <br> <br> records the <strong>metadata</strong> (not the data): parameters, environment, data location, time stamps, commit message, duration, data hash <br> <br> generates <strong>unique ID</strong> for each simulation</p>
+</section>
+<section id="easytouse1" class="level1 step" data-x="-2400" data-y="2800">
+<h1><a href="#easytouse1">Demonstration</a></h1>
+<p><br></p>
+<pre class="console"><code>$ smt init smt-demo
+$ smt configure --executable=python --main=script.py
+$ # python script.py params.json
+$ smt run --tag=demo --reason=&quot;create demo record&quot; params.json wait=3
+Record label for this run: &#39;0c50797f1e3f&#39;
+No data produced.
+Created Django record store using SQLite</code></pre>
+</section>
+<section id="webinterface" class="level1 step" data-x="-800" data-y="2800">
+<h1><a href="#webinterface">Local Web Interface</a></h1>
+<iframe width="100%" height="100%" src="http://127.0.0.1:8000/" frameborder="0" border="0"> </iframe>
+
+</section>
+<section id="server-side-solution" class="level1 step" data-x="800" data-y="2800">
+<h1><a href="#server-side-solution">Server-Side Solution</a></h1>
+<iframe width="70%" height="20%" style="position: relative; top: 50px; left: 100px;" src="http://127.0.0.1:5000/" frameborder="0" border="0"> </iframe>
+
+<p><img class="center" style="max-width: 70%; left: -30px; top: 150px;" src="images/diag.png"></img></p>
+<!-- <img class="center" style="max-width: 40%; left: 200px; top: 400px;" src="images/appengine.png"></img> -->
+<!-- <img class="center" style="max-width: 80%; left: -300px; top: -190px;" src="images/sumatra.png"></img> -->
+<!-- <img class="center" style="max-width: 40%; left: -200px; top: 100px;" src="images/sql-alchemy-logo1.jpg"></img> -->
+
+</section>
+<section id="thanks" class="level1 step" data-x="2400" data-y="2800">
+<h1><a href="#thanks">Thanks!</a></h1>
+<p><br> slides: <a href="http://wd15.github.io/nims-visit-2014/">wd15.github.io/nims-visit-2014</a> <br> <br> sumatra demo: <a href="https://github.com/wd15/smt-demo">github.com/wd15/smt-demo</a></p>
+</section>
+</div>
+
+<script src="impress.js/js/impress.js"></script>
+
+<script>impress().init();</script>
+</body>
+</html>
